@@ -1,0 +1,80 @@
+{% extends 'header.html' %}
+{% load static %}
+
+
+    <!-- header section start -->
+        
+        {% block scripts %}
+        <header class="header pt-30 pb-30  header-sticky header-static" style="padding-top: 30px; padding-bottom: 15px; top: 0px;">
+        {% endblock scripts %}
+     
+    {% block content %}
+    <!-- shop body section start -->
+    <main>
+        <!-- breadcrumb-area-start -->
+        <section class="breadcrumb-area" data-background="img/bg/page-title.png">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb-content" style="flex-direction: column;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb p-0 m-0">
+                                    <li class="breadcrumb-item"><a href="index4.html">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                                </ol>
+                            </nav>
+                         <h2 class="cart-title mt-40">Cart</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb-area-end -->
+
+
+
+  <!-- Cart Area Strat-->
+  <section class="cart-area pt-100 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="#">
+                    <div class="table-content table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="product-thumbnail">Images</th>
+                                    <th class="cart-product-name">Product</th>
+                                    <th class="product-price">Unit Price</th>
+                                    <th class="product-quantity">Quantity</th>
+                                    <th class="product-subtotal">Total</th>
+                                    <th class="product-remove">Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for cart_item in cart_items %}
+                                <tr>
+                                    <td class="product-thumbnail"><a href="single-product-4.html"><img src="img/product/pro1.jpg"
+                                                alt=""></a></td>
+                                    <td class="product-name"><a href="single-product-4.html">{{ cart_item.product.Product_Name }}</a></td>
+                                    <td class="product-price"><span class="amount">$130.00</span></td>
+                                    <td class="product-quantity">
+                                        <button class="btn theme-btn-2" type="submit">Add TO Cart</button>
+                                    </td>
+                                    <td class="product-subtotal"><span class="amount">$130.00</span></td>
+                                    <td class="product-remove"><a href="javascript:void(0)"><i class="fa fa-times"></i></a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Cart Area End-->
+</main>
+
+        {% include 'footer.html' %}
+        {% endblock%}

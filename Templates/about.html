@@ -1,0 +1,183 @@
+{% extends 'header.html' %}
+{% load static %}
+
+
+        {% block scripts %}
+        <header class="header pt-30 pb-30  header-sticky header-static" style="padding-top: 30px; padding-bottom: 15px; top: 0px;">
+        {% endblock scripts %}
+        
+    {% block content %}
+    <!-- about start -->
+    <section class="about-body mb-90">
+        <div class="has-breadcrumb-bg mb-120" data-background="/media/{{banner.Image}}">
+            <div class="breadcrumb-content d-flex justify-content-center align-items-center"
+                style="flex-direction: column;">
+                <h2 class="title">About Us</h2>
+                <nav aria-label="breadcrumb" class="mb-40">
+                    <ol class="breadcrumb p-0 m-0">
+                        <li class="breadcrumb-item"><a href="index7.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="container container-1430">
+            <div class="store-desc">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-6">
+                        <div class="store-left-desc pr-130">
+                            <div class="generic-title">
+                                <strong class="red-color"> HS MEDIA AND FILMS PVT LTD </strong>
+                                <h2 class="mb-0">Our Success</h2>
+                                <h2 class="mb-0">And Company History.</h2>
+                            </div>
+                            <div class="store-content mt-50">
+                                <p class="simple-text mb-15-important">
+                                    H S Media & Films Pvt Ltd is a premier Camera Equipment Rental Company located in the vibrant hub of Goregaon West, Mumbai. Established in 2013, we have emerged as a trusted name in the industry, offering an extensive array of cutting-edge camera gear, including DSLRs, Professional Camcorders, 4K cameras, and top-notch Sound Setups available for hire to cater to a diverse range of shooting requirements.
+                                </p>
+                                <p class="simple-text mb-15-important">Our commitment to excellence extends beyond merely offering state-of-the-art equipment; we strive to deliver personalized service and support to ensure that your filming experience is seamless and successful. With our dedicated team of professionals and a meticulous attention to detail, we aim to be your trusted partner in bringing your creative vision to life.</p>
+                                <p class="simple-text mb-15-important">Choose H S Media & Films Pvt Ltd for all your camera equipment rental needs, and experience the difference quality makes in your productions. Contact us today to discuss your project requirements and let us tailor a solution that exceeds your expectations.</p>
+                                <div class="signature mt-30">
+                                    <img src="{% static 'img/logo/singg.png' %}" class="d-block" alt="">
+                                </div>
+                                <div class="founder-name mt-35">
+                                    <h5 class="mb-0"><span class="red-color">Amit Singh</span> – Founder of HS Media Ltd
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-6">
+                        <div class="store-banner">
+                            <img src="{% static 'img/header/owner.jpg' %}" class="w-100" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about end -->
+    <!-- background video section start -->
+    <section class="bg-video">
+        <div class="popup-video">
+            <img src="{% static 'img/related/33.jpg' %}" class="w-100" alt="">
+            <a href="https://www.youtube.com/watch?v=e2FKXPzsT7E&ab_channel=MesutKurtis%D9%85%D8%B3%D8%B9%D9%88%D8%AF%D9%83%D9%8F%D8%B1%D8%AA%D9%90%D8%B3" class="video-popup"><i class="fal fa-play"></i></a>
+        </div>
+    </section>
+    <!-- background video section end -->
+
+
+
+    <!-- service section start -->
+    <section class="service mt-100 mb-100">
+        <div class="container container-1430">
+            <div class="generic-title text-center d-none">
+                <strong class="red-color">What We Do</strong>
+                <h2 class="mb-0">Your New Style 2019</h2>
+            </div>
+
+            <div class="store-content mt-50 d-none">
+                <p class="simple-text text-center mb-15-important" style="line-height: 26.964px;">
+                    <span style="font-size: 18px;">Ac bibendum ac in erat. Donec posuere consectetuer volutpat rutrum ac, sollicitudin</span>
+                    <br>
+                    <span style="font-size: 18px;">quam quisque, at interdum dignissim, fringilla elit risus lorem eu condimentum eros mollis.</span>
+                    <br>
+                    <span style="font-size: 18px;">Nam liber tempor cum soluta nobis eleifend option congue nihil doming id</span>
+                    <br>
+                    <span style="font-size: 18px;">quod mazim placerat facer possim assum.</span>
+                </p>
+            </div>
+
+            <div class="row service-row">
+                <div class="col-md-4">
+                <div class="service-box service-box-2">
+                        <div class="service-logo text-center">
+                            <img src="{% static 'img/logo/buildings.png' %}" alt="" class="service-img">
+                        </div>
+                        <div class="service-content text-center">
+                            <h6 class="title">Lucknow</h6>
+                            <p>"Our Lucknow Branch offers premier cameras, enabling<br>you to capture the city's heritage"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                <div class="service-box service-box-2">
+                        <div class="service-logo text-center">
+                            <img src="{% static 'img/logo/mumbai.png' %}" alt="" class="service-img">
+                        </div>
+                        <div class="service-content text-center">
+                            <h6 class="title">Mumbai</h6>
+                            <p>"Rent the lens, seize the moment,  <br> frame your Mumbai memories"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="service-box service-box-2">
+                        <div class="service-logo text-center">
+                            <img src="{% static 'img/logo/lotus-temple.png' %}" alt="" class="service-img">
+                        </div>
+                        <div class="service-content text-center">
+                            <h6 class="title">Delhi</h6>
+                            <p>"Capture Delhi's essence effortlessly with <br> premier lens rental services"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- service section end -->
+
+
+
+    <!-- testimonial section start -->
+    <section class="testimonial pt-180 pb-200" data-background="{% static 'img/related/1.jpg' %}">
+        <div class="container container-1430">
+            <div class="testimonial-carousel owl-theme owl-carousel">
+                <div class="testimonial-box text-center">
+                    <div class="testimonial-img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="by-author">
+                        <span class="author-name">Amit Singh</span>
+                        <span class="author-byline">Ceo & Co</span>
+                    </div>
+                    <div class="testimonial-desc">
+                        <blockquote class="mt-25">
+                            <p>
+                                <span>“ Rent top-quality cameras for capturing memories and unleashing creativity,</span>
+                                <br>
+                                <span> ensuring every moment is immortalized with precision and clarity "</span>
+                                
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="testimonial-box text-center">
+                    <div class="testimonial-img">
+                        <img src="{% static 'img/testimonial/1.png' %}" alt="">
+                    </div>
+                    <div class="by-author">
+                        <span class="author-name">Jason K. Manato</span>
+                        <span class="author-byline">Ceo & Co</span>
+                    </div>
+                    <div class="testimonial-desc">
+                        <blockquote class="mt-25">
+                            <p>
+                                <span>“ Ac bibendum ac in erat. Donec posuere consectetuer</span>
+                                <br>
+                                <span>volutpat rutrum ac, sollicitudin quam quisque, at interdum dignissim,</span>
+                                <br>
+                                <span>fringilla elit risus lorem eu condimentum. ”</span>
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- testimonial section end -->
+
+    {% include 'footer.html' %}
+    {% endblock%}

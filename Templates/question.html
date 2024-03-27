@@ -1,0 +1,112 @@
+{% extends 'header.html' %}
+{% load static %}
+
+        {% block scripts %}
+        <header class="header pt-30 pb-30  header-sticky header-static" style="padding-top: 30px; padding-bottom: 15px; top: 0px;">
+        {% endblock scripts %}
+    
+        
+    {% block content %}
+    <!-- question start -->
+    <section class="question-body mb-90">
+        <div class="has-breadcrumb-bg mb-120" data-background="/media/{{ banner.Image }}">
+            <div class="breadcrumb-content d-flex justify-content-center align-items-center"
+                style="flex-direction: column;">
+                <h2 class="title">Questions</h2>
+                <nav aria-label="breadcrumb" class="mb-40">
+                    <ol class="breadcrumb p-0 m-0">
+                        <li class="breadcrumb-item"><a href="index4.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Question</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="container container-1430">
+            <div class="question-desc">
+                <h4>Below are frequently asked questions, you may find the answer for yourself</h4>
+                <p class="simple-text">Welcome to our FAQ hub, where answers to common queries await! Dive in and explore our curated list of frequently asked questions, tailored to address your needs. Discover solutions and insights at your fingertips. Your quest for knowledge ends here!</p>
+
+                <div class="question-collapse mt-50">
+                    <div class="accordion" id="accordionExample">
+                        <div>
+                          <div id="headingOne">
+                            <h2 class="mb-0">
+                              <button class="btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne">
+                                In What condition are product in? <i class="fal fa-plus float-right"></i>
+                              </button>
+                            </h2>
+                          </div>
+                      
+                          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                             <p>The team of H S MEDIA always serve the best quality of Equipment as well as manpower services.  We ensure that the equipment provide by us are in good condition
+                            </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div id="headingTwo">
+                            <h2 class="mb-0">
+                              <button class="btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                What if any issues with your product during the Rental Period ? <i class="fal fa-plus float-right"></i>
+                              </button>
+                            </h2>
+                          </div>
+                          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body">
+                             <p>If anything falls short please contact our team  at  9137100968 guaranteed Satisfaction. we will give our best to solve your problem
+                            </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div id="headingThree">
+                            <h2 class="mb-0">
+                              <button class="btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                What is the time period for which I can rent ? <i class="fal fa-plus float-right"></i>
+                              </button>
+                            </h2>
+                          </div>
+                          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                            <div class="card-body">
+                             <p> You Can rent the Product as per your requirement, Days, week & Months</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div id="headingfour">
+                            <h2 class="mb-0">
+                              <button class="btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapseThree">
+                                What if I would like to extend my rental period? <i class="fal fa-plus float-right"></i>
+                              </button>
+                            </h2>
+                          </div>
+                          <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
+                            <div class="card-body">
+                             <p>You can easily extend your rental period by talking to our team</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div id="headingfive">
+                            <h2 class="mb-0">
+                              <button class="btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapseThree">
+                                Is any discount given by you for a monthly rent ? <i class="fal fa-plus float-right"></i>
+                              </button>
+                            </h2>
+                          </div>
+                          <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordionExample">
+                            <div class="card-body">
+                             <p>Yes, We will give Discount on basis of your hire period</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- question end -->
+
+    {% include 'footer.html' %}
+    {% endblock%}

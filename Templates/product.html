@@ -1,0 +1,315 @@
+{% extends 'header.html' %}
+{% load static %}
+
+
+        {% block scripts %}
+        <header class="header pt-30 pb-30  header-sticky header-static" style="padding-top: 30px; padding-bottom: 15px; top: 0px;">
+        {% endblock scripts %}
+
+    {% block content %}
+    <!-- single product start -->
+    <section class="single-product mb-90">
+        <div class="container-fluid">
+            <nav aria-label="breadcrumb" class="mb-40">
+                <ol class="breadcrumb p-0 m-0">
+                    <li class="breadcrumb-item"><a href="index3.html">Home</a></li>
+                    <li class="breadcrumb-item" aria-current="page">Product</li>
+                    <li class="breadcrumb-item active" aria-current="page">single Product</li>
+                </ol>
+            </nav>
+            <div class="shop-wrapper">
+                <div class="single-product-top">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-12">
+                            <div class="shop-img">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="nav nav-pills" id="v-pills-tab" role="tablist"
+                                            aria-orientation="vertical">
+                                            <a class="active" data-toggle="pill" href="#tab-0">
+                                                <img src="/media/{{result.Image}}" class="w-100 mt-5-px" alt="">
+                                            </a>
+                                            {% for i in img %}
+                                            <a class="popup-images" data-toggle="pill" href="#tab-{{i.id}}">
+                                                <img src="/media/{{i.Image}}" class="w-100" alt="">
+                                            </a>
+                                            {% endfor %}
+                                            <!--<a class="popup-images" data-toggle="pill" href="#tab-3">
+                                                <img src="/media/{{result.Image}}" class="w-100 mt-5-px" alt="">
+                                            </a>
+                                            <a class="popup-images" data-toggle="pill" href="#tab-4">
+                                                <img src="/media/{{result.Image}}" class="w-100 mt-5-px" alt="">
+                                            </a> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="tab-content" id="v-pills-tabContent">
+                                            <div class="tab-pane fade show active" id="tab-0">
+                                                <div class="product-img">
+                                                    <a class="popup-image" href="/media/{{result.Image}}"><img
+                                                            src="/media/{{result.Image}}" class="w-100" alt=""></a>
+                                                </div>
+                                            </div>
+                                            {% for i in img %}
+                                            <div class="tab-pane fade" id="tab-{{i.id}}">
+                                                <div class="product-img">
+                                                    <a class="popup-image" href="/media/{{i.Image}}"><img
+                                                            src="/media/{{i.Image}}" class="w-100" alt=""></a>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-12">
+                            <div class="single-product-sidebar">
+                                <div class="product-content">
+                                    <div class="single-product-title">
+                                        <h2>{{result.Product_Name}}</h2>
+                                    </div>
+                                    <!-- <div class="single-product-price">$<span>44.00</span>–<span>$250.00</span></div> -->
+                                    <div class="single-product-desc mb-25">
+                                        <p>{{result.Sub_description|safe}}</p>
+                                    </div>
+                                    
+                                    <div class="quick-quantity mt-60">
+                                        <a href="{% url 'addcart' result.id %}">
+                                            <button type="submit" class="list-add-cart-btn red-hover-btn border-0"
+                                                style="padding-left: 80px;padding-right: 80px;transition: all .5s;">{% if remove == True %}Remove from Cart{% else %} add to cart {% endif %}
+                                            </button>
+                                        </a>
+                                    </div>
+                                    
+                                    <br>
+                                    <div class="single-product-category">
+                                        <ul>
+                                            <li class="mb-0"><a href="javascript:void(0)" class="title">Categories: </a>
+                                            </li>
+                                            <li class="mb-0"><a href="shop4.html">{{result.Catagory}}</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- <div class="share-product mt-20">
+                                        <ul>
+                                            <li><a href="javascript:void(0)" class="title">Share this product</a></li>
+                                            <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top"
+                                                    title="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top"
+                                                    title="twitter"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top"
+                                                    title="pinterest"><i class="fab fa-pinterest"></i></a></li>
+                                            <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top"
+                                                    title="google +"><i class="fab fa-google-plus-g"></i></a></li>
+                                            <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top"
+                                                    title="Linkdin"><i class="fab fa-linkedin-in"></i></a></li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="single-product-bottom mt-80 gray-border-top">
+                    <ul class="nav nav-pills justify-content-center mt-100">
+                        <li class="nav-item">
+                            <a class="active" data-toggle="pill" href="#desc-tab-1">Description</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a data-toggle="pill" href="#desc-tab-3">Additional information</a>
+                        </li> -->
+                        <!-- <li class="nav-item">
+                            <a class="" data-toggle="pill" href="#desc-tab-2">Reviews (0)</a>
+                        </li> -->
+                    </ul>
+                    <div class="container container-1200">
+                        <div class="tab-content mt-60">
+                            <div class="tab-pane fade show active" id="desc-tab-1">
+                                <div class="single-product-tab-content">
+                                    <h3 class="title mb-30">Description</h3>
+                                    <p>{{result.Description|safe}}</p>
+                                </div>
+                            </div>
+                            <!-- <div class="tab-pane fade" id="desc-tab-2">
+                                <div class="single-product-tab-content">
+                                    <h3 class="title mb-30">Reviews</h3>
+                                    <div class="review-box-item">
+                                        <div class="row">
+                                            <div class="col-xl-1 col-lg-2 col-md-2 col-3 pr-xl-0">
+                                                <div class="review-box-img d-block text-right">
+                                                    <img src="img/small-img/1.jpg" width="60" height="60"
+                                                        class="avatar-img" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-11 col-lg-10 col-9 pl-0">
+                                                <div class="review-box-content">
+                                                    <div class="row">
+                                                        <div class="col-7">
+                                                            <div class="author-name">
+                                                                <h6>John96</h6>
+                                                                <div class="content">
+                                                                    <p class="mb-0">Awesome</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-5 pr-5-px pl-0">
+                                                            <div class="rating text-right">
+                                                                <i class="fal fa-star red-color"></i>
+                                                                <i class="fal fa-star red-color"></i>
+                                                                <i class="fal fa-star red-color"></i>
+                                                                <i class="fal fa-star"></i>
+                                                                <i class="fal fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>There are no reviews yet.</p>
+                                    <h4>Add a review</h4>
+
+                                    <form action="#" method="POST">
+                                        <label for="rating">Your Rating</label>
+                                        <input type="radio" id="rating">
+                                    </form>
+                                    <p class="star-rating">
+                                        <a href="javascript:void(0)"><i class="fal fa-star"></i></a>
+                                        <a href="javascript:void(0)"><i class="fal fa-star"></i></a>
+                                        <a href="javascript:void(0)"><i class="fal fa-star"></i></a>
+                                        <a href="javascript:void(0)"><i class="fal fa-star"></i></a>
+                                        <a href="javascript:void(0)"><i class="fal fa-star"></i></a>
+                                    </p>
+
+                                    <div class="form-group">
+                                        <label for="review">Review</label>
+                                        <textarea name="review" id="review" cols="30" rows="6"
+                                            class="form-control"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">Name <span class="required">*</span></label>
+                                        <input type="text" name="name" id="name" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email <span class="required">*</span></label>
+                                        <input type="email" name="email" id="email" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="checkbox-input">
+                                            <input type="checkbox" id="condition" name="condition">
+                                        </div>
+                                        <label for="condition">Save my name, email, and website in this browser for the
+                                            next time I comment.</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="generic-btn red-hover-btn"
+                                            style="font-size: 14px !important;">Submit</button>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- single product end -->
+    <!-- sugession start -->
+    <section class="sugession-product mt-120">
+        <div class="container-fluid">
+            <div class="generic-title text-center">
+                <h2 class="mb-20">You May Also Like</h2>
+            </div>
+            <div class="main-product-carousel owl-carousel red-nav mt-50">
+                {% for i in random %}
+                <div class="carousel-single-item">
+                    <div class="col-12">
+                        <div class="product-box">
+                            <div class="product-box-wrapper">
+                                <div class="product-img">
+                                    <img src="/media/{{i.Image}}" class="w-100" alt="">
+                                    <a href="{% url 'product' i.id %}" class="d-block">
+                                        <div class="second-img">
+                                            <img src="/media/{{i.Image}}" alt="" class="w-100">
+                                        </div>
+                                    </a>
+                                    <a href="{% url 'product' i.id %}"
+                                        class="product-img-link quick-view-1 text-capitalize">Quick view</a>
+                                </div>
+
+                                <div class="product-desc pb-20">
+                                    <div class="product-desc-top">
+                                        <div class="categories">
+                                            <a href="shop3.html" class="product-category"><span>{{i.Catagory}}</span></a>
+                                        </div>
+                                        <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                    class="fal fa-heart"></i></span></a>
+                                    </div>
+                                    <a href="single-product-3.html" class="product-title">{{i.Product_Name}}</a>
+                                    <div class="price-switcher">
+                                        <!-- <span class="price switcher-item">$58.00</span> -->
+                                        <a href="{{i.Youtube_Link}}" class="add-cart text-capitalize switcher-item">Click & Play</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- sugession end -->
+    <!-- related product start -->
+    <section class="related-product mt-120">
+        <div class="container-fluid">
+            <div class="generic-title text-center">
+                <h2 class="mb-20">Related Product</h2>
+            </div>
+            <div class="main-product-carousel owl-carousel red-nav mt-50">
+                {% for i in random2 %}
+                <div class="carousel-single-item">
+                    <div class="col-12">
+                        <div class="product-box">
+                            <div class="product-box-wrapper">
+                                <div class="product-img">
+                                    <img src="/media/{{i.Image}}" class="w-100" alt="">
+                                    <a href="{% url 'product' i.id %}" class="d-block">
+                                        <div class="second-img">
+                                            <img src="/media/{{i.Image}}" alt="" class="w-100">
+                                        </div>
+                                    </a>
+                                    <a href="{% url 'product' i.id %}"
+                                        class="product-img-link quick-view-1 text-capitalize">Quick view</a>
+                                </div>
+
+                                <div class="product-desc pb-20">
+                                    <div class="product-desc-top">
+                                        <div class="categories">
+                                            <a href="shop3.html" class="product-category"><span>{{i.Catagory}}</span></a>
+                                        </div>
+                                        <a href="wishlist.html" class="wishlist float-right"><span><i
+                                                    class="fal fa-heart"></i></span></a>
+                                    </div>
+                                    <a href="single-product-3.html" class="product-title">{{i.Product_Name}}</a>
+                                    <div class="price-switcher">
+                                        <!-- <span class="price switcher-item">$58.00</span> -->
+                                        <a href="{{i.Youtube_Link}}" class="add-cart text-capitalize switcher-item">Click & Play</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- related product end -->
+
+
+    {% include 'footer.html' %}
+    {% endblock%}

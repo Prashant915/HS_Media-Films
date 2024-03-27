@@ -1,0 +1,125 @@
+{% extends 'header.html' %}
+{% load static %}
+
+    {% block scripts %}
+    <header class="header pt-30 pb-30  header-sticky header-static" style="padding-top: 30px; padding-bottom: 15px; top: 0px;">
+    {% endblock scripts %}
+
+
+
+    {% block content %}
+    <!-- shop body section start -->
+    <section class="cart-body mb-90 gray-border-top pt-35">
+        <div class="has-breadcrumb-content">
+            <div class="container container-1430">
+                <div class="breadcrumb-content" style="flex-direction: column;">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb p-0 m-0">
+                            <li class="breadcrumb-item"><a href="index2.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                        </ol>
+                    </nav>
+                 <h2 class="cart-title mt-40">Cart</h2>
+                </div>
+
+                <div class="cart-body-content">
+                    <div class="row">
+                        <div class="col-xl-8">
+                            
+                            <div class="product-content">
+                                <form action="#">
+                                    <div class="table-responsive">
+                                        <table class="table table-2">
+                                            <thead>
+                                                <tr>
+                                                    <th class="remove-porduct"></th>
+                                                    <th class="product-image">Image</th>
+                                                    <th class="product-title">Product</th>
+                                                    <!-- <th>Price</th> -->
+                                                    <th class="quantity">Quantity</th>
+                                                    <!-- <th class="total">Total</th> -->
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for cart_item in cart_items %}
+                                                <tr>
+                                                    <td>
+                                                        <div class="table-data">
+                                                            <a href="{% url 'deleteitem' cart_item.id %}" class="close-btn"><i class="fal fa-times"></i></a>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="table-data">
+                                                            <img src="/media/{{ cart_item.product.Image }}" width="80" alt="">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="table-data">
+                                                            <h6><a href="{% url 'product' cart_item.product.id %}" class="title">{{ cart_item.product.Product_Name }}</a></h6>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td>
+                                                        <div class="table-data">
+                                                                    <input type="number" value="1" style="margin-right: 20px; width: 119px;">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- <div class="cupon">
+                                            <form action="#" method="POST">
+                                                <input type="text" placeholder="Cupon code" class="text-left pl-3" style="margin-right: 20px; width: 119px;">
+                                                <button class="generic-btn border-0 red-hover-btn text-uppercase">Apply Cupon</button>
+                                                <button class="generic-btn border-0 red-hover-btn text-uppercase float-right">Update Cart</button>
+                                            </form>
+                                    </div> -->
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="cart-widget">
+                                <h4 class="title">Enquire Now</h4>
+                                
+                                    <form action="{% url 'sending_mail' %}" method="post">
+                                        {% csrf_token %}
+                                    
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="mb-30">
+                                                    <input type="text" name="name" placeholder="Your Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class=" mb-30">
+                                                    <input type="text" name="mobile" placeholder="Your Phone">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="mb-30">
+                                                    <input type="text" name="email" placeholder="Your Email">
+                                                </div>
+                                            </div>
+                                        </div>      
+                                    <br><br>
+                                <input type="submit"  value="Checkout" class="generic-btn red-hover-btn w-100 text-uppercase d-block" style="height: 55px;cursor: pointer;">
+                                <!-- <a href="checkout.html" class="mt-40 generic-btn red-hover-btn w-100 d-block" style="height: 50px;">Procced to checkout</a> -->
+                               
+                            </form>
+                            
+                            </div>
+                            <!-- /. cart widget -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- shop body section end -->
+
+    {% include 'footer.html' %}
+    {% endblock%}
+

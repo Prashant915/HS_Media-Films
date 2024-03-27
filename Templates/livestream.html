@@ -1,0 +1,226 @@
+{% extends 'header.html' %}
+{% load static %}
+    <!-- header section start -->
+    {% block scripts %}
+    <header class="header pt-30 pb-30  header-sticky header-static" style="padding-top: 30px; padding-bottom: 15px; top: 0px;">
+    {% endblock scripts %}
+
+    {% block content %}
+    <!-- hero banner product section start -->
+    <section class="hero-banner-product-grid">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-12">
+                    <div class="banner-img has-content body-banner mt-20">
+                        <a href="{% url 'camerapage' %}"><img src="{% static 'img/livestream/4.jpg' %}" class="w-100" alt=""></a>
+                        <div class="banner-bottom-content">
+                            <p class="top">CAMERA COLLECTION</p>
+                            <h2>Cameras</h2>
+                            <p class="light">Many Attractive Deals. Shop the Collection</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-12">
+                    <div class="banner-img has-content body-banner mt-20">
+                        <a href="{% url 'lights' %}"><img src="{% static 'img/livestream/6.jpg' %}" class="w-100" alt=""></a>
+                        <div class="banner-bottom-content">
+                            <p class="top">Lighting collection</p>
+                            <h2>Lights</h2>
+                            <p class="light">Attractive Deals on Lights. Shop the Collection</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-12">
+                    <div class="banner-img has-content body-banner mt-20">
+                        <a href="{% url 'ringsandgrips' %}"><img src="{% static 'img/livestream/5.jpg' %}" class="w-100" alt=""></a>
+                        <div class="banner-bottom-content">
+                            <p class="top">Rings And Grips Collecion</p>
+                            <h2>Rings n' Grips</h2>
+                            <p class="light">Many Attractive Deals. Shop the Collection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- hero banner product section end -->
+
+    <!-- welcome section start -->
+    <section class="welcome mt-125">
+        <div class="container  pb-120  gray-border-bottom">
+         <div class="generic-title text-center">
+             <p class="pb-10 d-block"><span style="font-size: 18px;">Welcome to HS Media</span></p>
+             <h2 class="mb-25">About Live Streaming </h2>
+             <p style="text-align: center;"><span style="font-size: 18px; margin-bottom: 7px;" class="d-inline-block">“ Maximize Your Reach with H S Media and Films: Elevate Your Events with Premier Live</span><br>
+                 <span style="font-size: 18px; margin-bottom: 7px;" class="d-inline-block"> Streaming Solutions From Corporate to Branded Streams, We Tailor Services to Your Needs. Engage Audiences in Real-Time on Top</span><br>
+                 <span style="font-size: 18px; margin-bottom: 7px;" class="d-inline-block">Platforms like YouTube, Facebook, and Instagram Live Trust Us for Seamless,</span><br>
+                 <span style="font-size: 18px; margin-bottom: 7px;" class="d-inline-block">High-Quality Live Video Production”</span></p>
+         </div>
+         <div class="signature mt-30">
+             <img src="img/logo/singg.png" class="d-block mx-auto" alt="">
+         </div>
+         <div class="founder-name mt-35">
+             <h5 class="text-center mb-0"><span class="red-color">Amit Singh</span> – Founder of HS Media Ltd</h5>
+         </div>
+        </div>
+     </section>
+    <!-- welecome section end -->
+
+
+<!-- our products section start -->
+<section class="our-products mt-120">
+    <div class="container">
+        <div class="generic-title text-center">
+            <h2 class="mb-20">Our Products</h2>
+            <p>Elevating Events with Premier Live Streaming Solutions on</p>
+            <p>Top Platforms for Seamless, High-Quality Video Production and Audience Engagement.</p>
+        </div>
+        <ul class="nav nav-pills mb-3 pl-15 left-tab-link mt-65" >
+            <li class="nav-item">
+              <a class="active" data-toggle="pill" href="#main-tab-1">Camera </a>
+            </li>
+            <li class="nav-item">
+              <a class="" data-toggle="pill" href="#main-tab-2">Filter </a>
+            </li>
+            <li class="nav-item">
+              <a class=""  data-toggle="pill" href="#main-tab-3">Lenses</a>
+            </li>
+        </ul>
+
+        <div class="tab-content mt-25" >
+            <div class="tab-pane fade show active" id="main-tab-1">
+                <div class="product-content-inner">
+                    <div class="product-grid">
+                        <div class="row">
+                            {% for i in camera %}
+                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
+                                <div class="product-box position-relative mb-40 middle-view">
+                                    <div class="product-box-wrapper">
+                                        <div class="product-img">
+                                            <img src="/media/{{i.Image}}" class="w-100" alt="">
+                                            <a href="{% url 'product' i.id %}" class="d-block"><div class="second-img">
+                                                <img src="/media/{{i.Image}}" alt="" class="w-100">
+                                            </div></a>
+                                            <a href="{% url 'product' i.id %}" class="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</a>
+                                            {% if i.Sale %}<span class="sale bg-red text-white">sale!</span>{% endif %}
+                                        </div>
+
+                                        <div class="product-desc">
+                                            <div class="product-desc-top">
+                                                <div class="categories">
+                                                    <a href="{% url 'product' i.id %}" class="product-category"><span>{{i.Catagory}}</span></a>
+                                                </div>
+                                                <!-- <a href="{% url 'addcart' i.id %}" class="wishlist float-right"><span><i class="fal fa-heart"></i></span></a> -->
+                                            </div>
+                                            <a href="{% url 'product' i.id %}" class="product-title eright-turquoise-color-hover">{{i.Product_Name}}</a>
+                                            <div class="price-switcher">
+                                                    <a href="{{i.Youtube_Link}}" class="add-cart text-capitalize switcher-item">Click & Play</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade pl-15" id="main-tab-2">
+              <div class="product-grid">
+                        <div class="row">
+                            {% for i in filter %}
+                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
+                                <div class="product-box position-relative mb-40 middle-view">
+                                    <div class="product-box-wrapper">
+                                        <div class="product-img">
+                                            <img src="/media/{{i.Image}}" class="w-100" alt="">
+                                            <a href="{% url 'product' i.id %}" class="d-block"><div class="second-img">
+                                                <img src="/media/{{i.Image}}" alt="" class="w-100">
+                                            </div></a>
+                                            <a href="{% url 'product' i.id %}" class="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</a>
+                                            {% if i.Sale %}<span class="sale bg-red text-white">sale!</span>{% endif %}
+                                        </div>
+
+                                        <div class="product-desc">
+                                            <div class="product-desc-top">
+                                                <div class="categories">
+                                                    <a href="{% url 'product' i.id %}" class="product-category"><span>{{i.Catagory}}</span></a>
+                                                </div>
+                                                <!-- <a href="{% url 'addcart' i.id %}" class="wishlist float-right"><span><i class="fal fa-heart"></i></span></a> -->
+                                            </div>
+                                            <a href="{% url 'product' i.id %}" class="product-title eright-turquoise-color-hover">{{i.Product_Name}}</a>
+                                            <div class="price-switcher">
+                                                    <a href="{{i.Youtube_Link}}" class="add-cart text-capitalize switcher-item">Click & Play</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+            </div>
+            <div class="tab-pane fade pl-15" id="main-tab-3">
+               <div class="product-grid">
+                        <div class="row">
+                            {% for i in lenses %}
+                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
+                                <div class="product-box position-relative mb-40 middle-view">
+                                    <div class="product-box-wrapper">
+                                        <div class="product-img">
+                                            <img src="/media/{{i.Image}}" class="w-100" alt="">
+                                            <a href="{% url 'product' i.id %}" class="d-block"><div class="second-img">
+                                                <img src="/media/{{i.Image}}" alt="" class="w-100">
+                                            </div></a>
+                                            <a href="{% url 'product' i.id %}" class="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</a>
+                                            {% if i.Sale %}<span class="sale bg-red text-white">sale!</span>{% endif %}
+                                        </div>
+
+                                        <div class="product-desc">
+                                            <div class="product-desc-top">
+                                                <div class="categories">
+                                                    <a href="{% url 'product' i.id %}" class="product-category"><span>{{i.Catagory}}</span></a>
+                                                </div>
+                                                <!-- <a href="{% url 'addcart' i.id %}" class="wishlist float-right"><span><i class="fal fa-heart"></i></span></a> -->
+                                            </div>
+                                            <a href="{% url 'product' i.id %}" class="product-title eright-turquoise-color-hover">{{i.Product_Name}}</a>
+                                            <div class="price-switcher">
+                                                    <a href="{{i.Youtube_Link}}" class="add-cart text-capitalize switcher-item">Click & Play</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="text-center mt-60 load-btn">
+            <a href="{% url 'filter' %}" class="load-more">MORE PRODUCTS</a>
+       </div>
+    </div>  
+</section>
+<!-- new arrival section end -->
+
+
+<!-- shipping price section start -->
+<section class="shipping-price-section pt-130 mt-120 mb-120 gray-border-top">
+    <div class="container">
+        <div class="shipping-icon text-center">
+            <img src="img/logo/ship-logo.svg" alt="">
+        </div>
+        <div class="shipping-desc pt-35">
+            <h2 class="mb-20">Rent High-Quality Cameras for Unforgettable Memories</h2>
+            <p class="mb-0">Discover a diverse selection of top-notch rental cameras for all occasions. Whether you're a</p>
+            <p class="mb-0">hobbyist or a professional, Capture Creations offers reliable equipment to immortalize your</p>
+            <p class="mb-0">most cherished moments. Rent today and transform your vision into reality.</p>
+            <div class="text-center"><a href="" class="generic-btn mt-50 red-hover-btn text-uppercase">Discover now</a></div>
+        </div>
+    </div>
+</section>
+<!-- shipping price section end -->
+{% include 'footer.html' %}
+{% endblock%}

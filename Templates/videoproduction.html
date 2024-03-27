@@ -1,0 +1,291 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+    <!-- slider section start -->
+    <section class="slider">
+        <div class="slider-active">
+            <div class="single-slider  h-950  d-flex align-items-center" data-background="/media/{{ banner1.Image }}">
+                <div class="container">
+                    <div class="single-slider-inner">
+                        <div class="single-slider-content text-left light-content">
+                            <div class="slider-heading " data-animation="fadeInUp" data-delay=".4s">
+                                <h2 class="mb-0 strong-heading">{{banner1.Title}}</h2>
+                            </div>
+                            <div class="slider-desc slider-desc-2" data-animation="fadeInUp" data-delay=".6s">
+                                <p class="mt-35 mb-0">{{banner1.Sub_title}}</p>
+                            </div>
+                            <div class="slider-link" data-animation="fadeInUp" data-delay=".8s">
+                                <a href="{{banner1.link}}" class="generic-btn mt-70 red-hover-btn text-uppercase">Discover
+                                    now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slider  h-950  d-flex align-items-center" data-background="/media/{{ banner2.Image }}">
+                <div class="container">
+                    <div class="single-slider-inner">
+                        <div class="single-slider-content text-left light-content">
+                            <div class="slider-heading " data-animation="fadeInUp" data-delay=".4s">
+                                <h2 class="mb-0 strong-heading" data-animation="animated animate__jello"
+                                data-delay=".5s" >{{banner2.Title}}</h2>
+                            </div>
+                            <div class="slider-desc slider-desc-2" data-animation="fadeInUp" data-delay=".6s">
+                                <p class="mt-35 mb-0">{{banner2.Sub_title}}</p>
+                            </div>
+                            <div class="slider-link" data-animation="fadeInUp" data-delay=".8s">
+                                <a href="{{banner2.link}}" class="generic-btn mt-70 red-hover-btn text-uppercase">Discover
+                                    now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slider  h-950  d-flex align-items-center" data-background="/media/{{ banner3.Image }}">
+                <div class="container">
+                    <div class="single-slider-inner">
+                        <div class="single-slider-content text-left light-content">
+                            <div class="slider-heading " data-animation="fadeInUp" data-delay=".4s">
+                                <h2 class="mb-0 strong-heading" data-animation="animated animate__jello"
+                                    data-delay=".5s">{{banner3.Title}}</h2>
+                            </div>
+                            <div class="slider-desc slider-desc-2" data-animation="fadeInUp" data-delay=".6s">
+                                <p class="mt-35 mb-0">{{banner3.Sub_title}}</p>
+                            </div>
+                            <div class="slider-link" data-animation="fadeInUp" data-delay=".8s">
+                                <a href="{{banner3.link}}" class="generic-btn mt-70 red-hover-btn text-uppercase">Discover
+                                    now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- slider section end -->
+
+
+
+
+
+    <!-- stylish collection section start -->
+    <section class="stylish-collection mt-120">
+        <div class="container container-1200">
+            <div class="generic-title text-center">
+                <h2 class="mb-20">Video Production Services</h2>
+                <p>Lights, Camera, Action! Power up your storytelling with our premier video production service.</p>
+                <p>From concept to creation, we bring your vision to life. Cinematic quality, professional expertise, and seamless execution – all within reach. </p>
+                <p>Let your story unfold in stunning detail. Lights, camera, produce – your masterpiece awaits!</p>
+            </div>
+            <div class="home-widget mt-80">
+                <div class="home-widget-inner">
+                    <div class="row align-items-center">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                            <div class="widget-content">
+                                <h3>Visionary Films: Crafting Your Story</h3>
+                                <p class="mt-20 mb-35"> Explore Cinema's Evolution for Internet, Festivals, Education, Training, and Beyond in Today's Dynamic Landscape.</p>
+                                <a href="" class="home-widget-link text-uppercase">Discover now</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                            <div class="home-widget-right">
+                                <div class="row">
+                                    <div
+                                        class="col-xl-6  col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center align-items-center">
+                                        <div class="widget-sm-img">
+                                            <a href="">
+                                                <div class="banner-img">
+                                                    <img src="{% static 'img/videopro/6.jpg' %}" class="w-100" alt="">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        <div class="widgt-big-img">
+                                            <a href="">
+                                                <div class="banner-img">
+                                                    <img src="{% static 'img/videopro/1.jpg' %}" class="w-100" alt="">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="home-widget mt-80">
+                <div class="home-widget-inner">
+                    <div class="row align-items-center">
+
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                            <div class="widgt-big-img">
+                                <a href="">
+                                    <div class="banner-img has-mega-img">
+                                        <img src="{% static 'img/videopro/3.jpg' %}" class="w-100" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                            <div class="widget-content text-right">
+                                <h3>FrameForge: Where Ideas Take Shape</h3>
+                                <p class="mt-20 mb-35"> Documentary, Web Films, Interviews, and Intraweb Exploration. Discover New-Age Filmmakers and Emerging Trends Shaping Today's Landscape.</p>
+                                <a href="" class="home-widget-link text-uppercase">Discover now</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-widget mt-80">
+                <div class="home-widget-inner">
+                    <div class="row align-items-center">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                            <div class="widget-content">
+                                <h3>SilverScreen Studios: Cinematic Excellence Unleashed</h3>
+                                <p class="mt-20 mb-35">"Innovative Filmmakers, Unconventional Approach: Great Ideas, Missing Teams. Bridging the Gap with Comprehensive Production Support from Pre to Post-Production.</p>
+                                <a href="" class="home-widget-link text-uppercase">Discover now</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                            <div class="home-widget-right">
+                                <div class="row">
+                                    <div
+                                        class="col-xl-6  col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center align-items-center">
+                                        <div class="widget-sm-img">
+                                            <a href="">
+                                                <div class="banner-img">
+                                                    <img src="{% static 'img/videopro/12.jpg' %}" class="w-100" alt="">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        <div class="widgt-big-img">
+                                            <a href="">
+                                                <div class="banner-img">
+                                                    <img src="{% static 'img/videopro/13.jpg' %}" class="w-100" alt="">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home-widget mt-80">
+                <div class="home-widget-inner">
+                    <div class="row align-items-center">
+
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                            <div class="widgt-big-img">
+                                <a href="">
+                                    <div class="banner-img has-mega-img">
+                                        <img src="{% static 'img/videopro/4.jpg' %}" class="w-100" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                            <div class="widget-content text-right">
+                                <h3>LensCrafters: Capturing Moments, Creating Magic</h3>
+                                <p class="mt-20 mb-35">Transparent Pricing, Ready Packages. Empowering Filmmakers with Budgeting and Planning Through Tailored Movie Production Packages as their Guide.</p>
+                                <a href="" class="home-widget-link text-uppercase">Discover now</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- stylish collection section end -->
+
+    <!-- new arrival section start -->
+    <section class="new-arrival mt-120">
+        <div class="container container-1200">
+            <div class="generic-title text-center">
+                <h2 class="mb-20">New Arrivals</h2>
+                <p>Unveil our latest arrivals, curated just for you.</p>
+                <p>Stay ahead with our newest products, waiting to be discovered.</p>
+            </div>
+            <div class="new-arrival-carousel owl-carousel red-nav mt-50">
+                {% for i in newarrival %}
+                <div class="carousel-single-item">
+                    <div class="col-12">
+                        <div class="product-box">
+                            <div class="product-box-wrapper">
+                                <div class="product-img">
+                                    <img src="/media/{{i.Image}}" class="w-100" alt="">
+                                    <a href="{% url 'product' i.id %}" class="d-block">
+                                        <div class="second-img">
+                                            <img src="/media/{{i.Image}}" alt="" class="w-100">
+                                        </div>
+                                    </a>
+                                    <a href="{% url 'product' i.id %}"
+                                        class="product-img-link quick-view-1 text-capitalize">Quick view</a>
+                                        {% if i.Sale %}<span class="sale bg-red text-white">sale!</span>{% endif %}
+                                </div>
+
+                                <div class="product-desc pb-20">
+                                    <div class="product-desc-top">
+                                        <div class="categories">
+                                            <a href="{% url 'product' i.id %}" class="product-category"><span>{{i.Catagory}}</span></a>
+                                        </div>
+                                        <a href="{% url 'addcart' i.id %}" class="wishlist float-right"><span><i
+                                                    class="fal fa-heart" {% if i.id in remove %}style="color:red"{% endif %}></i></span></a>
+                                    </div>
+                                    <a href="{% url 'product' i.id %}" class="product-title">{{i.Product_Name}}</a>
+                                    <div class="price-switcher">
+                                        <!-- <span class="price switcher-item">$58.00</span> -->
+                                        <a href="{{i.Youtube_Link}}" class="add-cart text-capitalize switcher-item">Click & Play</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- new arrival section end -->
+
+    <!-- shipping-price section start -->
+    <section class="shipping-price-section pt-130 mt-60 gray-border-top">
+        <div class="container">
+            <div class="shipping-icon text-center">
+                <img src="img/logo/ship-logo.svg" alt="">
+            </div>
+            <div class="shipping-desc pt-35">
+                <h2 class="mb-20">All Order Over $60 Ship Free!</h2>
+                <p class="mb-0">Donec vehicula cursus vestibulum lectus, sit eros integer varius cum turpis et quam
+                    congue nisl</p>
+                <p class="mb-0">accumsan ac bibendum ac in erat. Donec posuere consectetuer volutpat rutrum ac,
+                    sollicitudin quam quisque, at</p>
+                <p class="mb-0">interdum dignissim, fringilla elit risus lorem, eu condimentum eros mollis.</p>
+                <div class="text-center"><a href="" class="generic-btn mt-50 red-hover-btn text-uppercase">Discover
+                        now</a></div>
+            </div>
+        </div>
+    </section>
+    <!-- shipping-price section end -->
+    {% include 'footer.html' %}
+
+    {% endblock %}
+
+
+
+
+
+
+
