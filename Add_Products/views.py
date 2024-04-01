@@ -127,9 +127,8 @@ def questions(request):
     cart_items=None
     if 'cart_id' in request.session:
         cart_items = Cart.objects.get(pk=request.session['cart_id']).cartitem_set.all()
-    question=Frequently_Question.objects.all()
     banner=Banner.objects.get(Choose_Banner_For='Frequently Questions')
-    return render(request,'question.html',{'question':question,'cart_items': cart_items,'banner':banner})
+    return render(request,'question.html',{'cart_items': cart_items,'banner':banner})
 
 
 def singleproduct(request,productid):

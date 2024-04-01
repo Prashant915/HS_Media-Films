@@ -1,6 +1,7 @@
 from django.db import models
 from tinymce.models import HTMLField
 from django.utils.html import format_html
+from django.core.exceptions import ValidationError
 
 Catagory=(
     ('Camera','Camera'),
@@ -24,8 +25,14 @@ Destination=(
     ('Contact','Contact')
 
 )
+def validate_image(fieldfile_obj):
+        filesize = fieldfile_obj.file.size
+        megabyte_limit = 1.0
+        if filesize > megabyte_limit*1024*1024:
+            raise ValidationError("Max file size is %sMB" % str(megabyte_limit))
+        
 class Show_Products(models.Model):
-    Image=models.ImageField(blank=False,null=False,default=None)
+    Image=models.ImageField(blank=False,null=False,default=None,validators=[validate_image],help_text='Maximum file size allowed is 1Mb')
     Product_Name=models.CharField(max_length=50)
     Sub_description=HTMLField(max_length=2000)
     Catagory=models.CharField(max_length=30,choices=Catagory)
@@ -40,7 +47,7 @@ class Show_Products(models.Model):
 
 class Product_images(models.Model):
     post=models.ForeignKey(Show_Products,default=None,on_delete=models.CASCADE)
-    Image=models.ImageField(upload_to="Products")
+    Image=models.ImageField(upload_to="Products",validators=[validate_image],help_text='Maximum file size allowed is 1Mb')
 
 class DemoModel(models.Model):
     @property
@@ -56,18 +63,13 @@ class CartItem(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
 
-
+        
 class Banner(models.Model):
     Choose_Banner_For=models.CharField(max_length=40,choices=Destination,unique=True)
-    Image=models.ImageField(upload_to="Banners")
+    Image=models.ImageField(upload_to="Banners",validators=[validate_image],help_text='Maximum file size allowed is 1Mb')
     Title=models.CharField(max_length=30)
     Sub_title=models.CharField(max_length=50)
     link=models.URLField()
 
-class Frequently_Question(models.Model):
-    Question=models.TextField()
-    Answer=models.TextField()
-    def __str__(self) -> str:
-        return self.Question
     
 
